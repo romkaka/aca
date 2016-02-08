@@ -6,8 +6,9 @@ fichier="revstr"
 
 make re
 
+echo ""
 if [ -f $fichier ]; then
-printf "Easy test :\n"
+printf "Easy tests :\n"
 
 printf "> " ; ./revstr ok | grep -i ko > /dev/null ;
 
@@ -38,7 +39,7 @@ then
 else
     printf "KO\n"
 fi
-
+echo ""
 printf "Difficult tests :\n"
 
 printf "> " ; ./revstr "abcdefghijklmnopqrstuvwxyz"| grep -i zyxwvutsrqponmlkjihgfedcba > /dev/null ;
@@ -70,6 +71,7 @@ then
 else
     printf "KO\n"
 fi
+echo ""
 echo "Tests passed: $RES/7";
 else
 	printf "The build failed, your project could not be tested.\n"

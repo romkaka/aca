@@ -2,8 +2,11 @@
 
 PER=0
 RES=0
-make
+fichier="disparam"
 
+make re
+
+if [ -f $fichier ]; then
 printf "Easy test :\n"
 
 printf "> " ; ./disparam bonjour les cons | grep -i 3 > /dev/null ;
@@ -78,3 +81,6 @@ else
     printf "KO\n"
 fi
 echo "Tests passed: $RES/7";
+else
+	printf "The build failed, your project could not be tested.\n"
+fi
